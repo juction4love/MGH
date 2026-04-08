@@ -1,0 +1,73 @@
+name: mgh
+description: "A professional management and booking app for Muktinath Guesthouse."
+publish_to: 'none'
+version: 1.0.2+14
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # UI and Icons
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.1.0    # राम्रो नेपाली फन्टका लागि (उदा: Mukta)
+  
+  # Utilities & Background Tasks
+  url_launcher: ^6.2.4    # कल र म्यापका लागि
+  share_plus: ^10.1.0       
+  workmanager: ^0.9.0+3
+  shared_preferences: ^2.5.4
+  provider: ^6.1.1        # State Management का लागि
+  get_it: ^7.7.0
+  http: ^1.1.0
+  xml2json: ^6.2.0
+  flutter_local_notifications: ^17.0.0 # नोटिफिकेसनका लागि
+  sound_mode: ^3.0.1
+  webview_flutter: ^4.4.2
+  khalti_flutter: ^3.0.0
+
+
+  # PDF & Printing
+  pdf: ^3.10.8
+  printing: ^5.11.1
+  intl: ^0.20.2
+
+  path_provider: any
+  google_maps_flutter: ^2.17.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1 # पछिल्लो भर्सन
+
+# Launcher Icon Configuration
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_logo.png" # तपाईँको लोगोको पाथ
+  min_sdk_android: 21
+  # नोटिफिकेसन आइकनका लागि (Workable Logo)
+  adaptive_icon_background: "#FFFFFF" # ब्याकग्राउन्ड कलर
+  adaptive_icon_foreground: "assets/images/notification_logo.png"
+
+flutter:
+  uses-material-design: true
+  generate: true 
+
+  assets:
+    - assets/images/
+    - assets/lang/
+
+  # फन्ट सेक्सन हटाइएको छ किनकि हामी Google Fonts प्याकेज प्रयोग गर्दैछौँ।
+  # यसले 'Asset not found' एरर हटाउनेछ।
+dependency_overrides:
+  intl: ^0.20.2
+  khalti_flutter:
+    path: plugins/khalti-flutter-sdk/packages/khalti_flutter
+
+
+
